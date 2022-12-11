@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Artykuły
+{% endblock %}
+
+{% block body %}
+    <h1>Artykuły</h1>
+
+    <div>
+        {% for article in articles %}
+            <a href="{{ article.link }}" target="_blank">
+                <div>
+                    <span>
+                        <h2>{{ article.title }}</h2>
+                    </span> </br>
+                    <span>
+                        {{ article.content }}
+                    </span> </br>
+                </div>
+            </a></br></br>
+        {% endfor %}
+
+    </div>
+{% endblock %}
