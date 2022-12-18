@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kilka słów o autorze bloga :){% endblock %}
+
+{% block body %}
+
+    <div>
+        <h1>Kilka informacji o mnie: </h1>
+        <ul>
+        {% for information in informations %}
+            <li><b>{{ information.key }}:</b> {{ information.value }}</li></br>
+        {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

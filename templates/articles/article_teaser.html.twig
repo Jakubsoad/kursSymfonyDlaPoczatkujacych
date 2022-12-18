@@ -1,0 +1,17 @@
+<a href="{{ article.link }}" target="_blank">
+    <div>
+        <span>
+            <h2>{{ article.title }}</h2>
+        </span> </br>
+
+        <div>
+            <img src="{{ article.images|first.path }}" alt="{{ article.images|first.alt }}" width="300">
+        </div>
+        <span>
+            {{ article.dateAdded|date('Y-m-d') }}
+        </span> </br>
+        <span>
+            {{ article.content }}
+        </span> </br>
+    </div>
+</a>

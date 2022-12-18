@@ -9,16 +9,8 @@
 
     <div>
         {% for article in articles %}
-            <a href="{{ article.link }}" target="_blank">
-                <div>
-                    <span>
-                        <h2>{{ article.title }}</h2>
-                    </span> </br>
-                    <span>
-                        {{ article.content }}
-                    </span> </br>
-                </div>
-            </a></br></br>
+            {{ include('articles/article_teaser.html.twig', {article: article}) }}
+            </br></br>
         {% endfor %}
 
     </div>

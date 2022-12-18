@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BlogController extends AbstractController
+class ArticlePageController extends AbstractController
 {
     public function __construct(
         private ArticleRepository $articleRepository,
@@ -33,6 +33,8 @@ class BlogController extends AbstractController
     #[Route('/article/{article}', 'blog-article')]
     public function showArticle(Article $article): Response
     {
-        return $this->render('articles/article.html.twig', ['article' => $article]);
+        $transformedArticle = $this->articleProvider->prepareOneArticle($article, shortenContent: false);
+
+        return $this->render('articles/article.html.twig', ['article' => $transformedArticle]);
     }
 }

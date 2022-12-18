@@ -6,7 +6,17 @@
 
 {% block body %}
     <div>
+        <div>
+            <img src="{{ article.images|first.path }}" alt="{{ article.images|first.alt }}" width="300">
+        </div>
         <h1>{{ article.title }}</h1>
         <span>{{ article.content }}</span>
+
+        <div>
+            {% for image in article.images[1:] %}
+                <img src="{{ image.path }}" alt="{{ image.alt }}" width="300">
+            {% endfor %}
+        </div>
+
     </div>
 {% endblock %}

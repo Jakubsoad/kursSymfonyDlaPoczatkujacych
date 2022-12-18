@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zapraszam do kontaktu{% endblock %}
+
+{% block body %}
+
+    <div>
+        <h1>Zapraszam do kontaktu przez poniższe platformy:</h1>
+        <ul>
+            {% for contact in contactInformations %}
+                <li><b>{{ contact.key }}:</b> {{ contact.value }}</li></br>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
