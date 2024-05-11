@@ -18,7 +18,7 @@ class ArticlePageController extends AbstractController
     {
     }
 
-    #[Route('/articles', 'blog-articles')]
+    #[Route('/articles', name: 'blog-articles')]
     public function showArticles(): Response
     {
         $articles = $this->articleRepository->findAll();
@@ -30,7 +30,7 @@ class ArticlePageController extends AbstractController
         return $this->render('articles/articles.html.twig', $parameters);
     }
 
-    #[Route('/article/{article}', 'blog-article')]
+    #[Route('/article/{article}', name: 'blog-article')]
     public function showArticle(Article $article): Response
     {
         $transformedArticle = $this->articleProvider->prepareOneArticle($article, shortenContent: false);
